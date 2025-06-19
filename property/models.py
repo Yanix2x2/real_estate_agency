@@ -47,6 +47,7 @@ class Flat(models.Model):
         blank=True,
         db_index=True)
     new_building = models.BooleanField(
+        'Новостройка',
         choices=[
             (True, "Новостройка"),
             (False, "Старое здание"),
