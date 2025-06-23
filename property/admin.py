@@ -2,14 +2,6 @@ from django.contrib import admin
 from .models import Flat, Complaint, Owner
 
 
-# class MembershipInline(admin.TabularInline):
-#     model = Owner.flats.through
-#     verbose_name = "Собственность"
-#     verbose_name_plural = "Собственности"
-#     
-#     raw_id_fields 
-
-
 class OwnerInline(admin.TabularInline):
     model = Flat.owners.through
     verbose_name = 'Владелец'
@@ -35,9 +27,6 @@ class ComplaintAdmin(admin.ModelAdmin):
 
 
 class OwnerAdmin(admin.ModelAdmin):
-#     inlines = [
-#         MembershipInline,
-#     ]
     raw_id_fields = ('flats',)
 
 
