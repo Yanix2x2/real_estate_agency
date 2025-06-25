@@ -12,7 +12,7 @@ def connect_flats_and_owners(apps, schema_editor):
             owner_name=flat.owner,
             owner_pure_phone=flat.owner_pure_phone
         )
-        flat.owners.get_or_create(owner)
+        flat.owners.get_or_create(owner=owner)
 
 
 class Migration(migrations.Migration):
