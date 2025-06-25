@@ -6,7 +6,7 @@ from phonenumbers import parse, is_valid_number
 
 def format_number(apps, schema_editor):
     Flat = apps.get_model('property', 'Flat')
-    for flat in Flat.objects.all():
+    for flat in Flat.objects.all().iterator():
         parsed_pure_phone = parse(flat.owners_phonenumber, 'RU')
         if is_valid_number(parsed_pure_phone):
             flat.owner_pure_phone = parsed_pure_phone
