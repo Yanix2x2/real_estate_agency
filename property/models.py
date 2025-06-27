@@ -98,4 +98,4 @@ class Owner(models.Model):
     )
 
     def __str__(self):
-        return f'{self.owner_name}'
+        return f'{self.name}'
