@@ -9,10 +9,10 @@ def connect_flats_and_owners(apps, schema_editor):
 
     for flat in Flat.objects.all().iterator():
         owner = Owner.objects.get(
-            owner_name=flat.owner,
-            owner_pure_phone=flat.owner_pure_phone
+            name=flat.owner,
+            pure_phone=flat.owner_pure_phone
         )
-        flat.owners.get_or_create(owner=owner)
+        flat.owners.add(owner)
 
 
 class Migration(migrations.Migration):
